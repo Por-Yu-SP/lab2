@@ -1,4 +1,4 @@
-
+import math
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
@@ -6,6 +6,7 @@ def main():
     num_list = get_user_input()
     print(calc_average(num_list))
     print(find_min_max(num_list))
+    print(calc_median_temperature(num_list))
 
 def display_main_menu():
     print("display_main_menu")
@@ -41,10 +42,16 @@ def find_min_max(input):
     
 
 def sort_temperature(input):
-    return 
+    input.sort()
+    return input
 
 def calc_median_temperature(input):
-    return
+    input=sort_temperature(input)
+    if len(input)%2:
+        return input[math.floor(len(input)/2)]
+    else:
+        upper=math.floor(len(input)/2)
+        return (input[upper]+input[upper-1])/2
 
 if __name__ == "__main__":
     main()
