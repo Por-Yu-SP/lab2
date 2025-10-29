@@ -17,7 +17,7 @@ def get_user_input():
     postsplit=userinput.split(",")
     i=0
     while i!=len(postsplit):
-        postsplit[i]=float(postsplit[i])
+        postsplit[i]=float(postsplit[i]) 
         i+=1
     return postsplit
 
